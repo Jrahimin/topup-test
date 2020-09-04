@@ -68,15 +68,18 @@ class BuyerController extends Controller
 
     public function getBuyersWithoutEloq(Request $request)
     {
-
         try {
             $buyerData = DB::select('select buyer_id,sum(amount) total from ( select buyer_id,amount from pen_taken union all select buyer_id,amount from eraser_taken union all select buyer_id,amount from diary_taken ) t group by buyer_id ORDER BY total DESC');
 
             $buyers = [];
+            $buyerIds = [];
             foreach ($buyerData as $buyer)
             {
+                $buyerIds[] = $buyer->buyer_id;
                 $buyers[] = Buyer::where('buyers.id', $buyer->buyer_id)->with('diaries', 'pens', 'erasers')->first();
             }
+
+            $buyers[] = Buyer::whereNotIn('buyers.id', $buyerIds)->with('diaries', 'pens', 'erasers')->first();
 
             $heading = 'Purchase List Without Eloquent';
 

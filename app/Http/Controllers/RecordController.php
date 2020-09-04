@@ -21,6 +21,11 @@ class RecordController extends Controller
     {
 
         try {
+            if(Record::first()){
+                $message = "Already inserted";
+                return view('records', compact('message'));
+            }
+
             $recordsData = json_decode(file_get_contents(storage_path('app/public/records.json')), true)['RECORDS'];
 
             DB::beginTransaction();
@@ -30,11 +35,13 @@ class RecordController extends Controller
             }
             DB::commit();
 
-            return "Records are inserted";
+            $message = "Records are inserted";
+            return view('records', compact('message'));
         } catch (\Exception $ex) {
             DB::rollBack();
             Log::error('[Class => ' . __CLASS__ . ", function => " . __FUNCTION__ . " ]" . " @ " . $ex->getFile() . " " . $ex->getLine() . " " . $ex->getMessage());
-            return $this->exceptionMessage;
+            $message = $this->exceptionMessage;
+            return view('records', compact('message'));
         }
     }
 }

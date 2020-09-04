@@ -70,7 +70,27 @@
 
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
-                {{--<li><a href="{{ route('users.index') }}"><i class="fa fa-users" aria-hidden="true"></i><span>Admin</span></a></li>--}}
+                <li><a href="{{ route('welcome') }}"><i class="fa fa-pencil-square" aria-hidden="true"></i><span>Instructions</span></a></li>
+
+                <li><a href="{{ route('sec_buy_eloq') }}"><i class="fa fa-user-circle" aria-hidden="true"></i><span>Second Buyer (Eloquent)</span></a></li>
+                <li><a href="{{ route('sec_buy') }}"><i class="fa fa-user" aria-hidden="true"></i><span>Second Buyer</span></a></li>
+
+                <li><a href="{{ route('purchase_eloq') }}"><i class="fa fa-list-alt" aria-hidden="true"></i><span>Purchase List (Eloquent)</span></a></li>
+                <li><a href="{{ route('purchase') }}"><i class="fa fa-list" aria-hidden="true"></i><span>Purchase List</span></a></li>
+
+                <li><a href="{{ route('record') }}"><i class="fa fa-recycle" aria-hidden="true"></i><span>Transfer Records</span></a></li>
+
+                <li><a href="{{ route('callback') }}"><i class="fa fa-jsfiddle" aria-hidden="true"></i><span>Callback JS</span></a></li>
+
+                <li><a href="{{ route('animate') }}" target="_blank"><i class="fa fa-square" aria-hidden="true"></i><span>Animate Box</span></a></li>
+
+                <li><a href="{{ route('foreach') }}"><i class="fa fa-codepen" aria-hidden="true"></i><span>Foreach Example</span></a></li>
+                <li><a href="{{ route('sort') }}"><i class="fa fa-codepen" aria-hidden="true"></i><span>Sort Example</span></a></li>
+                <li><a href="{{ route('filter') }}"><i class="fa fa-codepen" aria-hidden="true"></i><span>Filter Example</span></a></li>
+                <li><a href="{{ route('map') }}"><i class="fa fa-codepen" aria-hidden="true"></i><span>Map Example</span></a></li>
+                <li><a href="{{ route('reduce') }}"><i class="fa fa-codepen" aria-hidden="true"></i><span>Reduce Example</span></a></li>
+
+                <li><a href="{{ route('answer') }}"><i class="fa fa-pencil" aria-hidden="true"></i><span>Answers</span></a></li>
             </ul>
         </section>
     </aside>
