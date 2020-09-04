@@ -59,6 +59,10 @@ Route::get('animation', function () {
     return view('animation');
 });
 
+Route::get('i-m-funny', function () {
+    return view('answers');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
