@@ -55,6 +55,10 @@ Route::get('define-callback-js', function () {
     return view('check-age');
 });
 
+Route::get('animation', function () {
+    return view('animation');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
